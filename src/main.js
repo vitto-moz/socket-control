@@ -6,20 +6,23 @@ import SocketIO from 'socket.io';
 import path from 'path'
 
 const publicPath = path.join(__dirname, '../public') 
-let app = express();
-let server = http.Server(app);
-let io = new SocketIO(server);
-let port = process.env.PORT || 3000;
+const app = express();
+const server = http.Server(app);
+const io = new SocketIO(server);
+const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath))
 
 io.on('connection', (socket) => {
   console.log("Connection");
 
-  socket.emit('ding');
+  socket.on('forward', () => {
+    console.log('forward ===>')
+    socket.emit('forward');
+  });
 
-  socket.on('ding', () => {
-    socket.emit('dong');
+  socket.on('back', () => {
+    socket.emit('back');
   });
 });
 
