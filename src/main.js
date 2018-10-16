@@ -14,15 +14,20 @@ const port = process.env.PORT || 3000;
 app.use(express.static(publicPath))
 
 io.on('connection', (socket) => {
-  console.log("Connection");
+  console.log("Connection: ", socket.id);
 
   socket.on('forward', () => {
-    console.log('forward ===>')
-    socket.emit('forward');
+    // console.log('forward ===>')
+    socket.broadcast.emit('forward');
   });
 
   socket.on('back', () => {
-    socket.emit('back');
+    // socket.broadcast.emit('back');
+    socket.broadcast.emit('back');
+  });
+
+  socket.on('test', (data) => {
+    console.log('data ', data)
   });
 });
 
