@@ -17,11 +17,12 @@ io.on('connection', (socket) => {
   console.log("Connection: ", socket.id);
 
   socket.on('forward', () => {
-    // console.log('forward ===>')
+    console.log('forward ===>')
     socket.broadcast.emit('forward');
   });
 
   socket.on('back', () => {
+    console.log('back ===>')
     // socket.broadcast.emit('back');
     socket.broadcast.emit('back');
   });
