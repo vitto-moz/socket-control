@@ -8,7 +8,7 @@ import path from 'path'
 const publicPath = path.join(__dirname, '../public') 
 const app = express();
 const server = http.Server(app);
-const allowedOrigins = "http://localhost:* http://178.151.17.5:* http://192.168.1.132:* https://secure-garden-82806.herokuapp.com:*";
+const allowedOrigins = "http://localhost:* http://178.151.17.5:* http://192.168.1.132:*";
 const io = new SocketIO(server, {
   origins: allowedOrigins
 });
@@ -23,13 +23,13 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/control', (req, res) => {
-  res.sendFile(publicPath + '/control.html')
-})
+// app.get('/control', (req, res) => {
+//   res.sendFile(publicPath + '/control.html')
+// })
 
-app.get('/', (req, res) => {
-  res.sendFile(publicPath + '/index.html')
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(publicPath + '/index.html')
+// })
 
 io.on('connection', (socket) => {
   console.log("Connection: ", socket.id);
