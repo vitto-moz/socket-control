@@ -10,8 +10,6 @@
 
 <body>
     <div class="controlsWrap">
-        <button class="button" onclick="onForward()">Forward</button>
-        <button class="button" onclick="onBack()">Back</button>
         <button class="button" onclick="reveal()">Reveal</button>
     </div>
 
@@ -21,14 +19,6 @@
         socket.on('forward', function () {
             console.log('!!!!!!!!!!!!!!!!1')
         })
-
-        function onForward() {
-            socket.emit('forward')
-        }
-
-        function onBack() {
-            socket.emit('back')
-        }
 
         function reveal() {
             socket.emit('reveal')

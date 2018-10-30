@@ -23,6 +23,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/control', (req, res) => {
+  res.sendFile(publicPath + '/control.html')
+})
+
 
 io.on('connection', (socket) => {
   console.log("Connection: ", socket.id);

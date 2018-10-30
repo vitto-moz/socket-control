@@ -1,8 +1,9 @@
-/* body {
+body {
     position: relative;
-    width: 200px;
-    height: 300px;
-} */
+    width: 95%;
+    height: 100%;
+    box-sizing: border-box
+}
 .controlsWrap {
     position: relative;
     display: flex;
@@ -11,7 +12,8 @@
     height: 350px;
     justify-content: space-between;
     align-items: center;
-    padding: 20px
+    padding: 20px;
+    box-sizing: border-box
 }
 
 .button {
