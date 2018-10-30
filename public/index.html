@@ -12,6 +12,7 @@
     <div class="controlsWrap">
         <button class="button" onclick="onForward()">Forward</button>
         <button class="button" onclick="onBack()">Back</button>
+        <button class="button" onclick="reveal()">Back</button>
     </div>
 
     <script>
@@ -27,6 +28,10 @@
 
         function onBack() {
             socket.emit('back')
+        }
+
+        function reveal() {
+            socket.emit('reveal')
         }
     </script>
 </body>

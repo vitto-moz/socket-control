@@ -38,8 +38,8 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('back');
   });
 
-  socket.on('test', (data) => {
-    console.log('data ', data)
+  socket.on('reveal', (data) => {
+    socket.broadcast.emit('reveal');
   });
 });
 
