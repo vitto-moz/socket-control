@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>Hello, world</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="controlsWrap">
+        <button class="button" onclick="onForward()">Forward</button>
+        <button class="button" onclick="onBack()">Back</button>
+    </div>
+
+    <script>
+        const socket = io();
+
+        socket.on('forward', function () {
+            console.log('!!!!!!!!!!!!!!!!1')
+        })
+
+        function onForward() {
+            socket.emit('forward')
+        }
+
+        function onBack() {
+            socket.emit('back')
+        }
+
+        function reveal() {
+            socket.emit('reveal')
+        }
+    </script>
+</body>
+
+</html>
