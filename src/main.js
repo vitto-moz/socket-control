@@ -46,7 +46,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('reveal', (data) => {
-    console.log('reveal ===>')
+    console.log('reveal ===>!!!')
     socket.broadcast.emit('reveal');
   });
 });
