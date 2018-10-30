@@ -8,10 +8,11 @@ import path from 'path'
 const publicPath = path.join(__dirname, '../public') 
 const app = express();
 const server = http.Server(app);
-// const allowedOrigins = "http://localhost:* http://192.168.1.132:* https://secure-garden-82806.herokuapp.com:*";
-const io = new SocketIO(server);
+const allowedOrigins = "http://localhost:* http://178.151.17.5:* http://192.168.1.132:* https://secure-garden-82806.herokuapp.com:*";
+const io = new SocketIO(server, {
+  origins: allowedOrigins
+});
 
-io.set('origins', '*:*')
 const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath))
