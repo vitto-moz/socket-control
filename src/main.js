@@ -23,9 +23,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.get('/control', (req, res) => {
-//   res.sendFile(publicPath + '/control.html')
-// })
+app.get('/control', (req, res) => {
+  res.sendFile(publicPath + '/control.html')
+})
 
 // app.get('/', (req, res) => {
 //   res.sendFile(publicPath + '/index.html')
