@@ -10,7 +10,7 @@ const app = express();
 const server = http.Server(app);
 const allowedOrigins = "http://localhost:* http://178.151.17.5:* http://192.168.1.132:*";
 const io = new SocketIO(server, {
-  origins: allowedOrigins
+  // origins: allowedOrigins
 });
 
 const port = process.env.PORT || 3000;
@@ -23,9 +23,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/control', (req, res) => {
-  res.sendFile(publicPath + '/control.html')
-})
+// app.get('/control', (req, res) => {
+//   res.sendFile(publicPath + '/control.html')
+// })
 
 // app.get('/', (req, res) => {
 //   res.sendFile(publicPath + '/index.html')
