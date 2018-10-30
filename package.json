@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "gulp watch",
+    "start": "node ./src/main.js",
+    "dev": "gulp watch",
     "test": "mocha -R spec",
     "debug": "gulp watch-debug",
     "build": "gulp build"
