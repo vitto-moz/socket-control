@@ -27,6 +27,9 @@ app.get('/control', (req, res) => {
   res.sendFile(publicPath + '/control.html')
 })
 
+app.get('/', (req, res) => {
+  res.sendFile(publicPath + '/index.html')
+})
 
 io.on('connection', (socket) => {
   console.log("Connection: ", socket.id);
