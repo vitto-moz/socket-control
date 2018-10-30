@@ -8,7 +8,7 @@ import path from 'path'
 const publicPath = path.join(__dirname, '../public') 
 const app = express();
 const server = http.Server(app);
-const allowedOrigins = "http://localhost:* http://127.0.0.1:*";
+const allowedOrigins = "http://localhost:* http://127.0.0.1:* https://secure-garden-82806.herokuapp.com:*";
 const io = new SocketIO(server, {
   origins: allowedOrigins,
 });
