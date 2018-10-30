@@ -13,6 +13,12 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath))
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 io.on('connection', (socket) => {
   console.log("Connection: ", socket.id);
 
