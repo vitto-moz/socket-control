@@ -24,11 +24,11 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "socket.io": "^1.4.6",
-    "socket.io-client": "^1.4.6"
+    "socket.io-client": "^1.4.6",
+    "gulp-nodemon": "^2.0.7"
   },
   "devDependencies": {
     "mocha": "^3.5.0",
-    "should": "^4.6.0",
-    "gulp-nodemon": "^2.0.7"
+    "should": "^4.6.0"
   }
 }
